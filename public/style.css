@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#map {
+    height: 400px; 
+    width: 100%;
+}
+
+#search-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid #ddd; /* Add a 1px solid border with a light gray color */
+}
+
+th, td {
+    padding: 8px; /* Add some padding for better appearance */
+    text-align: left;
+}

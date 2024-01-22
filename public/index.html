@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Map App</title>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="map"></div>
+
+    <div id="search-container">
+        <h1>Weather Map App</h1>
+        <form id="search-form" method="post">
+            <label for="search">Search:</label>
+            <input type="text" id="search" name="city" placeholder="Enter your city" required>
+            <button type="submit">Search</button>
+        </form>
+        <div>
+            <input type="checkbox" id="extended" name="extended">
+            <label for="extended">Show Extended Forecast</label>
+            <button id="news-button">Get News</button>
+            <button id="currency">Know currency</button>
+        </div>
+    </div>
+    <div id="weather-info"></div>
+
+    <div id="news-info"></div>
+
+    <div id="currency-info"></div>
+    
+    <footer>
+        <p>Alisher Khairullin SE-2207.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
+    <script src="/front.js"></script>
+</body>
+</html>
