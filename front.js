@@ -13,7 +13,6 @@ $(document).ready(function () {
         const city = $('#search').val();
         const extended = $('#extended').prop('checked');
 
-        // Очистка предыдущих данных перед новым запросом
         clearData();
 
         $.post('/', { city, extended }, function (data) {
@@ -26,7 +25,6 @@ $(document).ready(function () {
     });
 
     $('#news-button').click(function () {
-        // Очистка предыдущих данных перед новым запросом
         clearData();
 
         const city = $('#search').val();
@@ -39,7 +37,6 @@ $(document).ready(function () {
     });
 
     $('#currency').click(function () {
-        // Очистка предыдущих данных перед новым запросом
         clearData();
 
         const currencyCode = 'KZT';
@@ -54,7 +51,6 @@ $(document).ready(function () {
     });
 
     function clearData() {
-        // Очистка данных
         $('#weather-info').empty();
         $('#news-info').empty();
         $('#currency-info').empty();
