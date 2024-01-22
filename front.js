@@ -31,7 +31,7 @@ $(document).ready(function () {
         });
     });
     $('#currency').click(function () {
-        const currencyCode = 'USD'; 
+        const currencyCode = 'KZT'; 
         const exchangeRateApiKey = '47c235dc2ff646eb84df0027158a209c';
 
         $.get(`https://open.er-api.com/v6/latest/${currencyCode}?apikey=${exchangeRateApiKey}`, function (exchangeRateData) {
@@ -42,9 +42,6 @@ $(document).ready(function () {
             $('#currency-info').html('<p>Error: Unable to retrieve exchange rates for the specified currency.</p>');
         });
     });
-    
-    
-
 });
 
 function displayCurrentWeather(data, map) {
@@ -159,14 +156,14 @@ function displayExchangeRates(exchangeRates) {
             <thead>
                 <tr>
                     <th>Currency</th>
-                    <th>Rate(USD)</th>
+                    <th>Rate (KZT)</th>
                 </tr>
             </thead>
             <tbody>
                 ${Object.entries(exchangeRates.rates).map(([currency, rate]) => `
                     <tr>
                         <td>${currency}</td>
-                        <td>${rate}</td>
+                        <td>${(1 / rate).toFixed(2)}</td>
                     </tr>
                 `).join('')}
             </tbody>
