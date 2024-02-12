@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <nav class="top-nav">
+        <a href="/" id="home-link">Home</a>
+        <a href="/weather" id="weather-link">Weather API</a> 
+        <a href="/news" id="news-link">News API</a>
+        <a href="/currency" id="currency-link">Currency API</a>
+        <a href="/history" id="history-link">History</a>
+        <a href="/profile" id="profile-link">Profile</a>
+    </nav>
+
+    <div id="map"></div>
+    <div id="search-container">
+        <form id="search-form" method="post"> 
+        <label for="search">I am gay:</label>
+        <input type="text" id="search" name="city" placeholder="Enter your city" required>
+        <input type="submit" value="Search">
+    </form>
+    <div id="weather-info">
+        <% if (weather) { %>
+            <h2>Weather Information</h2>
+            <p>City: <%= weather.name %>, <%= weather.sys.country %></p>
+            <p>Temperature: <%= weather.main.temp %>°C</p>
+            <p>Humidity: <%= weather.main.humidity %>%</p>
+            <p>Pressure: <%= weather.main.pressure %> hPa</p>
+        <% } else { %>
+            <p>No weather information available.</p>
+        <% } %>
+    </div>
+
+    <footer>
+        <p>Alisher Khairullin SE-2207.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
+    <script src="/front.js"></script>
+</body>
+</html>

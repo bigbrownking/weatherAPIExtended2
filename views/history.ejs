@@ -1,0 +1,81 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Request History</title>  
+    <link rel="stylesheet" href="/style.css">  
+    <style> 
+        .request-type { 
+            margin-bottom: 20px; 
+            display: block; /* Размещаем каждый блок истории запросов на отдельной строке */ 
+        } 
+        .request-type h2 { 
+            margin-top: 0; 
+        } 
+        .request-type ul { 
+            list-style: none; 
+            padding: 0; 
+        } 
+        .request-type li { 
+            margin-bottom: 10px; 
+            border: 1px solid #ccc; 
+            padding: 10px; 
+        } 
+    </style> 
+</head>  
+<body>  
+    <nav class="top-nav">  
+        <a href="/" id="home-link">Home</a>  
+        <a href="/weather" id="weather-link">Weather</a>   
+        <a href="/news" id="news-link">News</a>  
+        <a href="/currency" id="currency-link">Currency</a>  
+        <a href="/history" id="history-link">History</a>  
+        <a href="/profile" id="profile-link">Profile</a>  
+    </nav>  
+    <h1>Request History</h1>  
+      
+    <div class="request-type">  
+        <h2>Weather Requests</h2>  
+        <ul>  
+            <% history.weather.forEach(entry => { %>  
+                <li>  
+                    <p>User: <%= entry.userId %></p>  
+                    <p>City: <%= entry.city %></p>  
+                    <p>Timestamp: <%= entry.timestamp %></p>  
+                </li>  
+            <% }); %>  
+        </ul>      
+    </div>  
+     
+    <div class="request-type">  
+        <h2>News Requests</h2>  
+        <ul>  
+            <% history.news.forEach(entry => { %>  
+                <li>  
+                    <p>User: <%= entry.userId %></p>  
+                    <p>City: <%= entry.city %></p>  
+                    <p>Timestamp: <%= entry.timestamp %></p>  
+                </li>  
+            <% }); %>  
+        </ul>  
+    </div>  
+ 
+    <div class="request-type">  
+        <h2>Currency Requests</h2>  
+        <ul>  
+            <% history.currency.forEach(entry => { %>  
+                <li>  
+                    <p>User: <%= entry.userId %></p>  
+                    <p>Username: <%= entry.username %></p>  
+                    <p>Timestamp: <%= entry.timestamp %></p>  
+                </li>  
+            <% }); %>  
+        </ul>  
+    </div>  
+  
+    <footer>  
+        <p>Alisher Khairullin SE-2207.</p>  
+    </footer>  
+</body>  
+</html>

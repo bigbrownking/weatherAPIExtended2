@@ -1,0 +1,53 @@
+<!DOCTYPE html>    
+<html lang="en">    
+<head>    
+    <meta charset="UTF-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Exchange Rates</title>    
+    <link rel="stylesheet" href="/style.css">    
+    <style>   
+        #exchange-rates {   
+            max-height: 400px; /* Задайте максимальную высоту контейнера */   
+            overflow-y: auto; /* Добавьте вертикальный скроллинг */   
+            margin-top: 20px;  
+        }   
+        .tableCUR thead th { 
+            position: sticky; 
+            top: 0; 
+            background-color: #f2f2f2; 
+        } 
+    </style>   
+</head>    
+<body>    
+    <nav class="top-nav">    
+        <a href="/" id="home-link">Home</a>    
+        <a href="/weather" id="weather-link">Weather API</a>     
+        <a href="/news" id="news-link">News API</a>    
+        <a href="/currency" id="currency-link">Currency API</a>    
+        <a href="/history" id="history-link">History</a>    
+        <a href="/profile" id="profile-link">Profile</a>    
+    </nav>    
+    <h1>Exchange Rates</h1>    
+    <div id="exchange-rates">    
+        <table class="tableCUR">    
+            <thead>    
+                <tr>    
+                    <th>Currency</th>    
+                    <th>Rate</th>    
+                </tr>    
+            </thead>    
+            <tbody>    
+                <% for (const currency in exchangeRates) { %>    
+                    <tr>    
+                        <td><%= currency %></td>    
+                        <td><%= exchangeRates[currency] %></td>    
+                    </tr>    
+                <% } %>    
+            </tbody>    
+        </table>    
+    </div>    
+    <footer>    
+        <p>Alisher Khairullin SE-2207.</p>    
+    </footer>    
+</body>    
+</html>

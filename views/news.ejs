@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <nav class="top-nav">
+        <a href="/" id="home-link">Home</a>
+        <a href="/weather" id="weather-link">Weather API</a> 
+        <a href="/news" id="news-link">News API</a>
+        <a href="/currency" id="currency-link">Currency API</a>
+        <a href="/history" id="history-link">History</a>
+        <a href="/profile" id="profile-link">Profile</a>
+    </nav>
+    <div id="search-container">
+        <form id="search-form" method="post"> 
+            <label for="search">Search:</label>
+            <input type="text" id="search" name="city" placeholder="Enter your city" required>
+            <input type="submit" value="Get News">
+        </form>
+    </div>
+    <h1>News:</h1>
+
+    <div>
+        <ul class="newsUL">
+            <% if (newsData && newsData.articles) { %>
+                <% newsData.articles.slice(0, 7).forEach(article => { %>
+                    <li>
+                        <h2 class="newsarticle"><%= article.title %></h2>
+                        <p class="articletext"><%= article.description %></p>
+                    </li>
+                <% }); %>
+            <% } else { %>
+                <li>No news articles available.</li>
+            <% } %>
+        </ul>    
+    </div>
+
+    <footer>
+        <p>Alisher Khairullin SE-2207.</p>
+    </footer>
+</body>
+</html>
