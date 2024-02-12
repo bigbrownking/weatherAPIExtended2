@@ -215,6 +215,16 @@ app.post('/signup', async (req, res) => {
     }
 });
 
+app.get('/logout', (req, res) => {
+    req.session.destroy(err => {
+        if (err) {
+            console.error('Error destroying session:', err);
+            res.status(500).send('Internal Server Error');
+        } else {
+            res.redirect('/login');
+        }
+    });
+});
 app.get("/news", authenticateUser,(req, res) => {
     res.render('empty-news');
 });
@@ -266,7 +276,7 @@ app.post("/news", authenticateUser, async (req, res) => {
 app.get("/weather", authenticateUser, (req, res) =>{
     res.render("empty-weather");
 });
-    
+
 app.post("/weather", authenticateUser, async (req, res) =>{
     try {
         const city = req.body.city;
