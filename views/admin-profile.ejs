@@ -6,16 +6,40 @@
     <title>Admin Profile</title>
     <link rel="stylesheet" href="/profile.css">
 </head>
+<style>
+    
+header{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
+nav{
+    display: flex;
+}
+ul li {
+    list-style: none;
+    justify-content: space-between;
+    margin-left: 10px;
+}
+ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+</style>
 <body>
-    <nav class="top-nav">
-        <a href="/" id="home-link">Home</a>
-        <a href="/weather" id="weather-link">Weather API</a> 
-        <a href="/news" id="news-link">News API</a>
-        <a href="/currency" id="currency-link">Currency API</a>
-        <a href="/history" id="history-link">History</a>
-        <a href="/profile" id="profile-link">Profile</a>
-        <a href="/logout" id="logout-link">Log out</a>
-    </nav>
+      
+    <header>
+        <nav>
+            <ul><li><a href="/">Home</a></li></ul>
+            <ul><li><a href="/weather">Weather API</a></li></ul>
+            <ul><li><a href="/news">News API</a></li></ul>
+            <ul><li><a href="/currency">Currency API</a></li></ul>
+            <ul><li><a href="/history">History</a></li></ul>
+            <ul><li><a href="/profile">Profile</a></li></ul>
+            <ul><li><a href="/logout">Log out</a></li></ul>
+        </nav>
+    </header>
     <h1>Admin Profile</h1>
     <h2>All User Profiles</h2>
     <ul>

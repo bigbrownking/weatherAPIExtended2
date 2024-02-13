@@ -8,7 +8,7 @@
     <style> 
         .request-type { 
             margin-bottom: 20px; 
-            display: block; /* Каждый блок истории запросов начинается с новой строки */ 
+            display: block;
         } 
         .request-type h2 { 
             margin-top: 0; 
@@ -21,61 +21,70 @@
             margin-bottom: 10px; 
             border: 1px solid #ccc; 
             padding: 10px; 
-        } 
+        }
+        /* Стили для скроллинга */
+        .scrollable {
+            max-width: 1200px; /* Высота контейнера с данными */
+            overflow-x: auto; /* Появление полосы прокрутки при необходимости */
+            border: 1px solid #ccc; /* Граница для визуального отображения границы контейнера */
+            padding: 10px; /* Добавление отступов внутри контейнера */
+        }
     </style> 
 </head>  
 <body>  
-    <nav class="top-nav">  
-        <a href="/" id="home-link">Home</a>  
-        <a href="/weather" id="weather-link">Weather</a>   
-        <a href="/news" id="news-link">News</a>  
-        <a href="/currency" id="currency-link">Currency</a>  
-        <a href="/history" id="history-link">History</a>  
-        <a href="/profile" id="profile-link">Profile</a> 
-        <a href="/logout" id="logout-link">Log out</a>
- 
-    </nav>  
-    <h1>Request History</h1>  
+    <header>
+        <nav>
+            <ul><li><a href="/">Home</a></li></ul>
+            <ul><li><a href="/empty-weather">Weather API</a></li></ul>
+            <ul><li><a href="/news">News API</a></li></ul>
+            <ul><li><a href="/currency">Currency API</a></li></ul>
+            <ul><li><a href="/history">History</a></li></ul>
+            <ul><li><a href="/profile">Profile</a></li></ul>
+            <ul><li><a href="/logout">Log out</a></li></ul>
+        </nav>
+    </header>
+    <div class="history">  
+        <h1>Request History</h1>  
       
-    <div class="request-type">  
-        <h2>Weather Requests</h2>  
-        <ul>  
-            <% history.weather.forEach(entry => { %>  
-                <li>  
-                    <p>User: <%= entry.userId %></p>  
-                    <p>City: <%= entry.city %></p>  
-                    <p>Timestamp: <%= entry.timestamp %></p>  
-                </li>  
-            <% }); %>  
-        </ul>      
-    </div>  
+        <div class="request-type scrollable"> <!-- Добавлен класс .scrollable для включения скроллинга -->  
+            <h2>Weather Requests</h2>  
+            <ul>  
+                <% history.weather.forEach(entry => { %>  
+                    <li>  
+                        <p>User: <%= entry.userId %></p>  
+                        <p>City: <%= entry.city %></p>  
+                        <p>Timestamp: <%= entry.timestamp %></p>  
+                    </li>  
+                <% }); %>  
+            </ul>      
+        </div>  
      
-    <div class="request-type">  
-        <h2>News Requests</h2>  
-        <ul>  
-            <% history.news.forEach(entry => { %>  
-                <li>  
-                    <p>User: <%= entry.userId %></p>  
-                    <p>City: <%= entry.city %></p>  
-                    <p>Timestamp: <%= entry.timestamp %></p>  
-                </li>  
-            <% }); %>  
-        </ul>  
-    </div>  
- 
-    <div class="request-type">  
-        <h2>Currency Requests</h2>  
-        <ul>  
-            <% history.currency.forEach(entry => { %>  
-                <li>  
-                    <p>User: <%= entry.userId %></p>  
-                    <p>Username: <%= entry.username %></p>  
-                    <p>Timestamp: <%= entry.timestamp %></p>  
-                </li>  
-            <% }); %>  
-        </ul>  
-    </div>  
-  
+        <div class="request-type scrollable"> <!-- Добавлен класс .scrollable для включения скроллинга -->  
+            <h2>News Requests</h2>  
+            <ul>  
+                <% history.news.forEach(entry => { %>  
+                    <li>  
+                        <p>User: <%= entry.userId %></p>  
+                        <p>City: <%= entry.city %></p>  
+                        <p>Timestamp: <%= entry.timestamp %></p>  
+                    </li>  
+                <% }); %>  
+            </ul>  
+        </div>  
+     
+        <div class="request-type scrollable"> <!-- Добавлен класс .scrollable для включения скроллинга -->  
+            <h2>Currency Requests</h2>  
+            <ul>  
+                <% history.currency.forEach(entry => { %>  
+                    <li>  
+                        <p>User: <%= entry.userId %></p>  
+                        <p>Username: <%= entry.username %></p>  
+                        <p>Timestamp: <%= entry.timestamp %></p>  
+                    </li>  
+                <% }); %>  
+            </ul>  
+        </div>
+    </div>
     <footer>  
         <p>Alisher Khairullin SE-2207.</p>  
     </footer>  

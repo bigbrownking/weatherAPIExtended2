@@ -273,11 +273,10 @@ app.post("/news", authenticateUser, async (req, res) => {
     }
 });
 
-app.get("/weather", authenticateUser, (req, res) =>{
-    res.render("empty-weather");
+app.get('/weather', (req,res) =>{
+    res.render('empty-weather'); 
 });
-
-app.post("/weather", authenticateUser, async (req, res) =>{
+app.post("/weather", async (req, res) =>{
     try {
         const city = req.body.city;
         const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${weatherApiKey}&units=metric`;
@@ -285,13 +284,17 @@ app.post("/weather", authenticateUser, async (req, res) =>{
         const weatherData = await fetchData(weatherUrl);
         if (weatherData.cod === 200) {
             console.log(weatherData);
-            res.render('weather', {weather: weatherData });
-        }   
+            res.render('weather', { weather: weatherData });
+        } else {
+            console.error("ERROR")
+            res.render('weather', { weather: null });
+        }
     } catch (error) {
         console.error('Error fetching weather data:', error);
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
+
 app.get("/currency",authenticateUser, async (req, res) => {
     try {
         const exchangeRateUrl = `https://open.er-api.com/v6/latest/KZT?apikey=${exchangeRateApiKey}`;

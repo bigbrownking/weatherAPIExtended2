@@ -34,9 +34,6 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     height: 100vh;
 }
 footer {
@@ -49,13 +46,13 @@ footer {
     padding: 10px 0;
 }
 
-.login-container {
+/* .login-container {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
-}
+} */
 
 h1 {
     color: #333;
@@ -65,6 +62,24 @@ form {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-top: 150px;
+}
+
+header{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
+nav{
+    display: flex;
+}
+ul li {
+    list-style: none;
+    justify-content: space-between;
+}
+ul li a {
+    color: white;
+    text-decoration: none;
 }
 
 label {
@@ -125,7 +140,7 @@ button:hover {
 .top-nav a:hover {
   color: #007bff; 
 }
-
+/* 
 ul {
   display: flex;
 }
@@ -134,7 +149,21 @@ li{
     list-style: none;
     padding: 10px;
 }
+ */
 
+ header{
+    background-color: black;
+    display: flex;
+}
+ul{
+    display: flex;
+}
+ul li {
+    list-style: none;
+}
+ul li a {
+    color: white;
+}
 .articletext {
 background-color: #bab9b9;
 }
@@ -148,3 +177,7 @@ background-color: #bab9b9;
     margin-top: 150px;
 }
     
+.history{
+    display: flex;
+    flex-direction: column;
+}

@@ -8,22 +8,24 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <nav class="top-nav">
-        <a href="/" id="home-link">Home</a>
-        <a href="/weather" id="weather-link">Weather API</a> 
-        <a href="/news" id="news-link">News API</a>
-        <a href="/currency" id="currency-link">Currency API</a>
-        <a href="/history" id="history-link">History</a>
-        <a href="/profile" id="profile-link">Profile</a>
-        <a href="/logout" id="logout-link">Log out</a>
-
-    </nav>
+     
+    <header>
+        <nav>
+            <ul><li><a href="/">Home</a></li></ul>
+            <ul><li><a href="/weather">Weather API</a></li></ul>
+            <ul><li><a href="/news">News API</a></li></ul>
+            <ul><li><a href="/currency">Currency API</a></li></ul>
+            <ul><li><a href="/history">History</a></li></ul>
+            <ul><li><a href="/profile">Profile</a></li></ul>
+            <ul><li><a href="/logout">Log out</a></li></ul>
+        </nav>
+    </header>
     <div id="map"></div>
     <div id="search-container">
         <form id="search-form" method="post"> 
         <label for="search">Search:</label>
         <input type="text" id="search" name="city" placeholder="Enter your city" required>
-        <input type="submit" value="Search">
+       <button type="submit">Search</button>
     </form>
     </div>
     <footer>
@@ -32,6 +34,5 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
-    <script src="/front.js"></script>
 </body>
 </html>
